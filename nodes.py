@@ -3462,7 +3462,7 @@ class WanVideoSampler:
         mm.soft_empty_cache()
         gc.collect()
         try:
-            torch.cuda.reset_peak_memory_stats(device)
+            torch.xpu.reset_peak_memory_stats(device)
         except:
             pass
 
@@ -3791,7 +3791,7 @@ class WanVideoSampler:
 
         try:
             print_memory(device)
-            torch.cuda.reset_peak_memory_stats(device)
+            torch.xpu.reset_peak_memory_stats(device)
         except:
             pass
 
